@@ -1,0 +1,16 @@
+<h1>登录</h1>
+
+<div id="session-form" v-cloak>
+  <%= form_for @form, as: :user, url: :session, html: { '@submit' => "submit" } do |f| %>
+    
+    <div class="form-group">
+      <%= f.email_field :email, required: true,
+        'v-model' => "user.email", placeholder: 'username' %>
+    </div>
+    <div class="form-group mb-5">
+      <%= f.password_field :password, required: true,
+        'v-model' => 'user.password', placeholder: 'password' %>
+    </div>
+    <button type="submit" class="btn">登录</button>
+  <% end %>
+</div>

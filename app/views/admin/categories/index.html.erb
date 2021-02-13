@@ -1,0 +1,39 @@
+<h1>管理分类</h1>
+
+<div class="content_wrapper">
+<div class="content">
+  <p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>标题</th>
+<!--       <th>描述</th>
+      <th>Father</th>
+      <th>Position</th>
+      <th>Deleted at</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.title %></td>
+<!--         <td><%#= category.desc %></td>
+        <td><%#= category.father_id %></td>
+        <td><%#= category.position %></td>
+        <td><%#= category.deleted_at %></td> -->
+        <td><%= link_to '预览', [:admin, category] %></td>
+        <td><%= link_to '编辑', edit_admin_category_path(category) %></td>
+        <td><%= link_to '删除', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新建分类', new_admin_category_path %>
+</div>
+</div>

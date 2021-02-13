@@ -1,0 +1,12 @@
+<h1>编辑分类</h1>
+
+<div class="content_wrapper">
+<div class="content">
+	
+<%= render 'form', category: @category %>
+
+<%= link_to '预览', [:admin, @category] %> |
+<%= link_to '返回', admin_categories_path %>
+
+</div>
+</div>

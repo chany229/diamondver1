@@ -1,0 +1,40 @@
+
+<div class="content_wrapper">
+  <div class="content">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>标题：</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>描述：</strong>
+  <%= @entry.desc %>
+</p>
+
+<p>
+  <strong>内容：</strong>
+  <%= @entry.content %>
+</p>
+
+<p>
+  <strong>分类：</strong>
+  <%= @entry.category_name %>
+</p>
+
+<!-- <p>
+  <strong>User:</strong>
+  <%#= @entry.user_id %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%#= @entry.deleted_at %>
+</p> -->
+
+<%= link_to '编辑', edit_admin_entry_path(@entry) %> |
+<%= link_to '返回', admin_entries_path %>
+</div>
+</div>

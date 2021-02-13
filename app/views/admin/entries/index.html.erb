@@ -1,0 +1,42 @@
+<h1>管理条目</h1>
+<div class="content_wrapper">
+<div class="content">
+
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>标题</th>
+      <th>描述</th>
+      <th>内容</th>
+      <th>分类</th>
+<!--       <th>User</th>
+      <th>Deleted at</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.title %></td>
+        <td><%= entry.desc %></td>
+        <td><%= entry.content %></td>
+        <td><%= entry.category_name %></td>
+<!--         <td><%#= entry.user_id %></td>
+        <td><%#= entry.deleted_at %></td> -->
+        <td><%= link_to '预览', [:admin, entry] %></td>
+        <td><%= link_to '编辑', edit_admin_entry_path(entry) %></td>
+        <td><%= link_to '删除', [:admin, entry], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新建条目', new_admin_entry_path %>
+
+</div>
+</div>

@@ -1,0 +1,181 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+//= require common
+//= require_self
+
+$color_main1: rgb(94,73,147);
+$color_main2: rgb(189,153,201);
+$color_sub1: rgb(196,87,124);
+$color_sub2: rgb(239,228,232);
+$color_3: rgb(0,143,175);
+
+body {
+  background-color: $color_sub2;
+  background-image: url(/assets/diamond_bg.png);
+  color: $color_main1;
+}
+a {
+  color: $color_3;
+  &:hover, &:active {
+    color: $color_sub1;
+  }
+}
+input[type="text"], input[type='number'] {
+  margin: 0 0 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $color_sub2;
+  color: $color_main1;
+  border: none;
+}
+input::-webkit-input-placeholder {
+  color: $color_main2;
+}
+
+.btn, input[type='submit'] {
+  margin: 0;
+  padding: 5px 10px;
+  background-color: $color_sub1;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+.side {
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: $color_main2;
+  background-image: url(/assets/line_bg.png);
+  padding: 20px;
+  h1 {
+    color: #fff;
+    border-top: 3px solid $color_main1;
+    border-bottom: 3px solid $color_main1;
+    text-align: center;
+    text-shadow: $color_main1 1px 0 0, $color_main1 0 1px 0, $color_main1 -1px 0 0, $color_main1 0 -1px 0;
+    span {
+      display: block;
+      border-top: 1px solid $color_main1;
+      border-bottom: 1px solid $color_main1;
+      margin: 2px 0;
+    }
+  }
+  .info {
+    color: $color_main1;
+    position: absolute;
+    bottom: 20px;
+    font-size: 11px;
+    text-align: center;
+    width: 200px;
+  }
+  ul.menu {
+    padding: 20px 0 0;
+
+    li {
+      margin-bottom: 15px;
+
+      .btn {
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        color: $color_3;
+        background-color: #fff;
+        display: block;
+        text-decoration: none;
+
+        &:hover, &.current {
+          background-color: $color_3;
+          color: #fff;
+          transition: color 1s, background-color 1s;
+        }
+      }
+    }
+  }
+}
+
+.body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .panel {
+    border-radius: 5px;
+    background-color: rgba(255,255,255,.7);
+    position: absolute;
+    bottom: 20px;
+    top: 20px;
+    left: 260px;
+    right: 20px;
+    h1 {
+      margin: 0;
+      background-color: $color_3;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 20px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 5px 5px 0 0;
+    }
+    .content_wrapper {
+      position: absolute;
+      overflow-y: scroll;
+      padding: 20px;
+      bottom: 0;
+      top: 50px;
+      left: 0;
+      right: 0;
+      .content {
+        form {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .icon {
+      background-image: url(/assets/icons.png);
+      background-size: 100% 100%;
+      width: 29px;
+      height: 30px;
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+    }
+  }
+
+  table {
+    background-color: $color_sub2;
+    border-radius: 5px;
+    overflow: hidden;
+    thead {
+      background-color: $color_sub1;
+      tr {
+        th {
+          padding: 5px;
+          text-align: center;
+          color: #fff;
+          border-left: 1px dashed #fff;
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border-top: 1px dashed #fff;
+          padding: 5px;
+          text-align: center;
+          border-left: 1px dashed #fff;
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+
+}
