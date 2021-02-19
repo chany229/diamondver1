@@ -8,7 +8,6 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 
-
 # role-based syntax
 # ==================
 
@@ -59,3 +58,35 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+set :stage, :production
+set :repo_url, 'git@github.com:chany229/diamondver1.git'
+set :branch, 'master'
+
+set :rails_env, 'production'
+
+set :rvm_type, :user
+set :rvm_ruby_version, '2.7.0'
+set :rvm_roles, [:app, :web, :db]
+
+
+set :full_app_name, "#{fetch(:application)}"
+set :server_name, "103.146.230.196"
+
+set :deploy_user, "root"
+set :deploy_to, "/var/www/diamond"
+
+server "#{fetch(:server_name)}", user: "#{fetch(:deploy_user)}", roles: [:app, :web, :db]
+
+set :ssh_options, {
+    forward_agent: true, #
+    auth_methods: %w(publickey password)
+}
+
+# set :whenever_command, [:bundle, :exec, :whenever]
+# set :whenever_environment, :ms
+
+set :linked_files, %w{config/database.yml}
+
+set :unicorn_config_path, "#{fetch(:deploy_to)}/current/config/unicorn/ms.rb"
+set :unicorn_pid, "#{fetch(:deploy_to)}/current/tmp/pids/ms.pid"
