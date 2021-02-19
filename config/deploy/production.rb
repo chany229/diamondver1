@@ -69,6 +69,8 @@ set :rvm_type, :system
 set :rvm_ruby_version, '2.7.0'
 set :rvm_roles, [:app, :web, :db]
 
+set :keep_releases, 5
+
 
 set :full_app_name, "#{fetch(:application)}"
 set :server_name, "103.146.230.196"
