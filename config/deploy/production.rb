@@ -65,7 +65,7 @@ set :branch, 'master'
 
 set :rails_env, 'production'
 
-set :rvm_type, :user
+set :rvm_type, :system
 set :rvm_ruby_version, '2.7.0'
 set :rvm_roles, [:app, :web, :db]
 
