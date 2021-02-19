@@ -87,6 +87,3 @@ set :ssh_options, {
 # set :whenever_environment, :ms
 
 set :linked_files, %w{config/database.yml}
-
-set :unicorn_config_path, "#{fetch(:deploy_to)}/current/config/unicorn/ms.rb"
-set :unicorn_pid, "#{fetch(:deploy_to)}/current/tmp/pids/ms.pid"
