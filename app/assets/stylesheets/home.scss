@@ -13,7 +13,7 @@ $color_3: rgb(0,143,175);
 body {
   background-color: $color_main2;
   position: relative;
-  background-image: url("<%= asset_path('line_bg.png') %>");
+  background-image: url(asset_path('line_bg.png'));
   color: $color_main1;
 }
 
@@ -56,7 +56,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
   left: 50px;
   right: 50px;
   position: absolute;
-  background-image: url("<%= asset_path('diamond_bg.png') %>");
+  background-image: url(asset_path('diamond_bg.png'));
   .main {
     position: relative;
     width: 100%;
@@ -269,7 +269,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
 }
 
 .icon {
-  background-image: url("<%= asset_path('icons.png') %>");
+  background-image: url(asset_path('icons.png'));
   background-size: 100% 100%;
   width: 29px;
   height: 30px;
