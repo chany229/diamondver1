@@ -54,7 +54,7 @@
             updateImages () {
                 const reg = new RegExp(/<action-text-attachment(.*?)url="(.*?)"(.*?)<\/action-text-attachment>/i);
 
-                this.about = this.entry.content.body.replaceAll(reg, '<img src="$2" style="max-width:100%"/>');
+                this.about = this.about.replaceAll(reg, '<img src="$2" style="max-width:100%"/>');
             },
         }
     }
