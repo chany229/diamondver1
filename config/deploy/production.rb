@@ -89,6 +89,6 @@ set :ssh_options, {
 # set :whenever_environment, :ms
 
 set :linked_files, %w{config/database.yml config/master.key puma.rb}
-set :linked_dirs, %w{tmp/pids tmp/sockets log}
+set :linked_dirs, %w{tmp/pids tmp/sockets log storage}
 
 set :nginx_server_name, "shifangliushi.site shifangliushi.work 103.146.230.196"

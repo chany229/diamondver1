@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :entries
+  has_many :entries, -> { order('id asc') }
 
   def to_hash
   	result = {}

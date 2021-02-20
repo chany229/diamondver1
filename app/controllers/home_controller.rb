@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
   def get_top
     @about = About.last
-    @entries = Entry.order('created_at desc').last(5)
+    @entries = Entry.order('created_at desc').first(5)
     result = {about: @about.to_hash_for_about, records: @entries.map(&:to_hash_for_list)}
     render json: result
   end
