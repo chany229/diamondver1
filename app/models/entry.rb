@@ -18,7 +18,7 @@ class Entry < ApplicationRecord
 
   def to_hash_for_list
   	result = {}
-  	%w(id title).each do |item|
+  	%w(id title category_name).each do |item|
   		result[item] = self.send(item)
   	end
     %w(created_at).each do |item|

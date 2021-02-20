@@ -13,7 +13,7 @@
                         <ul>
                             <li v-for="record in records">
                                 <span>{{record.created_at}}</span>
-                                <span>{{record.title}}</span>
+                                <span>【{{record.category_name}}】{{record.title}}</span>
                             </li>
                         </ul>
                     </div>
@@ -47,7 +47,14 @@
                     that.about = res['data']['about']['about']['body'];
                     that.records = res['data']['records'];
                     that.showLoading = false;
+
+                    that.updateImages();
                 })
+            },
+            updateImages () {
+                const reg = new RegExp(/<action-text-attachment(.*?)url="(.*?)"(.*?)<\/action-text-attachment>/i);
+
+                this.about = this.entry.content.body.replaceAll(reg, '<img src="$2" style="max-width:100%"/>');
             },
         }
     }

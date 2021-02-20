@@ -58,7 +58,7 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-
+set :application, 'diamond'
 set :stage, :production
 set :repo_url, 'git@github.com:chany229/diamondver1.git'
 set :branch, 'master'

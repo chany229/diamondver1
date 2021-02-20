@@ -15,6 +15,8 @@ server {
   listen 80;
   server_name <%= fetch(:nginx_server_name) %>;
   return 301 https://$host$1$request_uri;
+  client_max_body_size 1024M;
+  sendfile on;
 }
 <% end -%>
 
