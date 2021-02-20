@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="loading" v-show="showLoading"><span><img src='/assets/loading.gif'/></span></div>
+        <div class="loading" v-show="showLoading"><span><img src='/loading.gif'/></span></div>
         <div class="content">
             <h1>标签：{{tag}}</h1>
             <div class='wrapper'>
