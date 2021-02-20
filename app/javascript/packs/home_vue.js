@@ -28,9 +28,9 @@ VueRouter.prototype.push = function push (to) {
 }
 
 //更改頁面標題 //TODO
-router.afterEach((to, from, next) => {
-  document.title = to.name;
-})
+// router.afterEach((to, from, next) => {
+//   document.title = to.name;
+// })
 
 document.addEventListener('DOMContentLoaded', () => {
   let apps = [
