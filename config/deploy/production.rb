@@ -76,7 +76,7 @@ set :full_app_name, "#{fetch(:application)}"
 set :server_name, "103.146.230.196"
 
 set :deploy_user, "root"
-set :deploy_to, "/var/www/diamond"
+set :deploy_to, "/www/diamond"
 
 server "#{fetch(:server_name)}", user: "#{fetch(:deploy_user)}", roles: [:app, :web, :db]
 
