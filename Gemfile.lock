@@ -288,7 +288,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
-  capistrano (~> 3.14)
+  capistrano (~> 3.16)
   capistrano-rails
   capistrano-rvm
   capistrano-yarn

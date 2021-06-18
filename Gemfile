@@ -50,7 +50,7 @@ group :development do
   gem 'guard-rails', require: false
   gem 'guard-livereload', '~> 2.5', require: false
 
-  gem "capistrano", "~> 3.14", require: false
+  gem "capistrano", "~> 3.16", require: false
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rvm'
