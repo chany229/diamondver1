@@ -108,7 +108,7 @@
             updateImages () {
                 const reg = new RegExp(/<action-text-attachment(.*?)url="(.*?)"(.*?)<\/action-text-attachment>/i);
 
-                this.content = this.entry.content.body.replaceAll(reg, '<img src="$2" style="max-width:100%;max-height:500px"/>');
+                this.content = this.entry.content.body.replaceAll(reg, '<img src="$2" style="max-width:100%;max-height:800px"/>');
             },
             go_to_comments() {
                 document.querySelector(".comments").scrollIntoView();
