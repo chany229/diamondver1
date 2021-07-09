@@ -18,8 +18,8 @@
     <% @records.each do |record| %>
       <tr>
         <td><%= record.ip_string %></td>
-        <td><%= record.updated_at %></td>
-        <td><%= record.created_at %></td>
+        <td><%= record.updated_at.to_s(:datetime) %></td>
+        <td><%= record.created_at.to_s(:datetime) %></td>
         <td><%= record.count %></td>
       </tr>
     <% end %>
