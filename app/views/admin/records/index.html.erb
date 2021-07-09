@@ -1,0 +1,31 @@
+<h1>访问记录</h1>
+<div class="content_wrapper">
+<div class="content">
+
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>IP</th>
+      <th>当前访问时间</th>
+      <th>首次访问时间</th>
+      <th>累积访问次数</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.ip_string %></td>
+        <td><%= record.updated_at %></td>
+        <td><%= record.created_at %></td>
+        <td><%= record.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @records %>
+</div>
+</div>

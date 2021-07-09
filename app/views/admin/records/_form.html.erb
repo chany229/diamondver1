@@ -1,0 +1,27 @@
+<%= form_with(model: admin_record) do |form| %>
+  <% if admin_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_record.errors.count, "error") %> prohibited this admin_record from being saved:</h2>
+
+      <ul>
+        <% admin_record.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ip_string %>
+    <%= form.text_field :ip_string %>
+  </div>
+
+  <div class="field">
+    <%= form.label :useragent %>
+    <%= form.text_field :useragent %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :records
+  end
+  namespace :admin do
     resources :comments
     resources :abouts
     resources :entries

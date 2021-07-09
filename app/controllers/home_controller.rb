@@ -16,6 +16,9 @@ class HomeController < ApplicationController
 
   def get_works
   	@categories = Category.all
+    @record = Record.find_or_create_by(ip_string: request.remote_ip)
+    @record.count += 1
+    @record.save
   	render json: @categories.map(&:to_hash)
   end
 

@@ -6,7 +6,7 @@
   # GET /admin/entries
   # GET /admin/entries.json
   def index
-    @entries = Entry.order(created_at: :desc).page(page).per(20)
+    @entries = Entry.order(created_at: :desc).page(page).per(10)
   end
 
   # GET /admin/entries/1
