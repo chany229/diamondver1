@@ -1,4 +1,4 @@
-class Admin::EntriesController < ApplicationController
+ class Admin::EntriesController < ApplicationController
   layout 'admin'
   before_action :require_login
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
@@ -6,7 +6,7 @@ class Admin::EntriesController < ApplicationController
   # GET /admin/entries
   # GET /admin/entries.json
   def index
-    @entries = Entry.all
+    @entries = Entry.order(created_at: :desc).page(page).per(20)
   end
 
   # GET /admin/entries/1
@@ -72,5 +72,9 @@ class Admin::EntriesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def entry_params
       params.require(:entry).permit(:title, :desc, :content, :category_id, :user_id, :deleted_at, :tag_list)
+    end
+
+    def page
+      params[:page] || 1
     end
 end

@@ -83,3 +83,5 @@ gem 'image_processing', '~> 1.2'
 gem 'js_cookie_rails'
 
 gem 'acts-as-taggable-on', '~> 7.0'
+
+gem 'kaminari'

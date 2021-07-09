@@ -1,1 +1,1 @@
-json.partial! "admin_comments/admin_comment", admin_comment: @admin_comment
+json.partial! "admin_comments/comment", comment: @comment

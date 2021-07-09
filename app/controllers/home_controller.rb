@@ -41,7 +41,7 @@ class HomeController < ApplicationController
   end
 
   def comment
-    comment = Comment.new(comment: params[:comment], username: params[:username], useragent: params[:ua], entry_id: params[:entry_id])
+    comment = Comment.new(comment: params[:comment], username: params[:username], useragent: params[:ua], ip_string: request.remote_ip, entry_id: params[:entry_id])
     comment.user_id = current_user.id if current_user
     comment.save
     render json: {result: "ok"}

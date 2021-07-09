@@ -1,11 +1,12 @@
 class Admin::CommentsController < ApplicationController
+  layout 'admin'
   before_action :require_login
-  before_action :set_admin_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/comments
   # GET /admin/comments.json
   def index
-    @admin_comments = Admin::Comment.all
+    @comments = Comment.order(created_at: :desc).page(page).per(20)
   end
 
   # GET /admin/comments/1
@@ -15,7 +16,7 @@ class Admin::CommentsController < ApplicationController
 
   # GET /admin/comments/new
   def new
-    @admin_comment = Admin::Comment.new
+    @comment = Comment.new
   end
 
   # GET /admin/comments/1/edit
@@ -25,15 +26,15 @@ class Admin::CommentsController < ApplicationController
   # POST /admin/comments
   # POST /admin/comments.json
   def create
-    @admin_comment = Admin::Comment.new(admin_comment_params)
+    @comment = Comment.new(comment_params)
 
     respond_to do |format|
-      if @admin_comment.save
-        format.html { redirect_to @admin_comment, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_comment }
+      if @comment.save
+        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
-        format.json { render json: @admin_comment.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,12 +43,12 @@ class Admin::CommentsController < ApplicationController
   # PATCH/PUT /admin/comments/1.json
   def update
     respond_to do |format|
-      if @admin_comment.update(admin_comment_params)
-        format.html { redirect_to @admin_comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin_comment }
+      if @comment.update(comment_params)
+        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
-        format.json { render json: @admin_comment.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,7 +56,7 @@ class Admin::CommentsController < ApplicationController
   # DELETE /admin/comments/1
   # DELETE /admin/comments/1.json
   def destroy
-    @admin_comment.destroy
+    @comment.destroy
     respond_to do |format|
       format.html { redirect_to admin_comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,12 +65,16 @@ class Admin::CommentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_admin_comment
-      @admin_comment = Admin::Comment.find(params[:id])
+    def set_comment
+      @comment = Comment.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def admin_comment_params
-      params.fetch(:admin_comment, {})
+    def comment_params
+      params.fetch(:comment, {})
+    end
+    
+    def page
+      params[:page] || 1
     end
 end

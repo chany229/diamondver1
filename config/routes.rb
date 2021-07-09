@@ -2,14 +2,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :comments
-  end
-  namespace :admin do
     resources :abouts
-  end
-  namespace :admin do
     resources :entries
-  end
-  namespace :admin do
     resources :categories
   end
   get '/admin/index', as: :admin
