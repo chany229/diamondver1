@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if current_user
-      redirect_to admin_path
+      redirect_to admin_abouts_path
     end
     @form = Sessions::Form.new
   end
